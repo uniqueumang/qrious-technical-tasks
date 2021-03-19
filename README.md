@@ -132,16 +132,16 @@ Note: My Preference would be to use Unit Of Work Pattern but similar logic
 * My biggest issue here is thread exhausion. There is no Join but we keep on creating new threads. General preference would be to use Task. 
 * Use `Interlocked.Increment()` to increment failed and send count. Both of this need to be ulong. 
 
-MY asuumption is this class is a consumer which has reference to all queues. Someother oblect is constantly calling `SendNextEmail` like an infinite while loop. 
-
+My asuumption is this class is a consumer which has reference to all queues. Someother oblect is constantly calling `SendNextEmail` like an infinite while loop. Generally I would implement producer-consumer pattern with Blocking Collection 
 
 ## Ubiquity Technical Challenge
 
 Answer:
-12 digit Number: 123334444567 Prime Numbers: 313 563 811 863
+12 digit Number: 123334444567
+Prime Numbers: 313 563 811 863
 
 On my computer it takes 19ms to get that answer. Spec: AMD Ryzen 5 1600 & 32Gb of Ram. 
 
 Algorithm: 
-1) Find all 12-digit numbers which follows given rules. I use binary tree to generate such number. I found 8000 such numbers. 
+1) Find all 12-digit numbers which follows given rules. I use binary tree to generate such number. I found ~8000 such numbers. 
 2) Find prime factors of given 12 digit numbers. I only considered prime factors between 100 & 999. 
