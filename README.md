@@ -16,7 +16,7 @@
 * `retreiveAddressSqlCommand` instead of cmd.  Make it clear. 
 * Create a private method 'GetRawAddressesFromDatabase' which returns a `List<string>`. Role of this method to connect to DB & query the DB. Call this method from `CustomerAddressRepository`. 
 * Wrap connection in using statement. Also close the connection in the using statement.Wrap it in try-finally. Something like this 
-```
+``` C#
 List<string> GetRawAddressesFromDatabase(string status)
 {
     try{
